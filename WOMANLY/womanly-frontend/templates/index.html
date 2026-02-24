@@ -1,0 +1,583 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WoManly | Твое яркое сообщество</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-content">
+        <div class="logo">WoManly</div>
+        <nav class="nav-menu">
+          <a href="#about" class="nav-link" data-ru="О нас" data-en="About"
+            >О нас</a
+          >
+          <a
+            href="#achievements"
+            class="nav-link"
+            data-ru="Достижения"
+            data-en="Achievements"
+            >Достижения</a
+          >
+          <a
+            href="#support"
+            class="nav-link"
+            data-ru="Поддержка"
+            data-en="Support"
+            >Поддержка</a
+          >
+          <a
+            href="#articles"
+            class="nav-link"
+            data-ru="Статьи"
+            data-en="Articles"
+            >Статьи</a
+          >
+        </nav>
+        <div class="header-actions">
+          <span class="lang-switch" id="langSwitch" data-lang="ru"
+            >EN | RU</span
+          >
+          <button
+            class="btn btn-primary btn-pulse"
+            data-ru="Войти"
+            data-en="Sign in"
+          >
+            Войти
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero-section">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="container hero-container">
+          <div class="hero-text text-pop-in">
+            <span
+              class="subtitle"
+              data-ru="Международное сообщество"
+              data-en="International Community"
+              >Международное сообщество</span
+            >
+            <h1 class="main-title">
+              <span data-ru="Поддержка, которая" data-en="Support that"
+                >Поддержка, которая</span
+              >
+              <span
+                class="highlight-text"
+                data-ru="не знает границ"
+                data-en="knows no borders"
+                >не знает границ</span
+              >
+            </h1>
+            <p
+              class="description"
+              data-ru="Проект от девушек для девушек. Мы создаем безопасное место, где можно быть собой, развиваться и находить подруг по всему миру."
+              data-en="A project by girls for girls. We create a safe space where you can be yourself, grow, and find friends around the world."
+            >
+              Проект от девушек для девушек. Мы создаем безопасное место, где
+              можно быть собой, развиваться и находить подруг по всему миру.
+            </p>
+            <div class="hero-buttons">
+              <a
+                href="#support"
+                class="btn btn-primary"
+                data-ru="Присоединиться"
+                data-en="Join us"
+                >Присоединиться</a
+              >
+              <a
+                href="#about"
+                class="btn btn-outline"
+                data-ru="Узнать больше"
+                data-en="Learn more"
+                >Узнать больше</a
+              >
+            </div>
+          </div>
+          <div class="hero-image-placeholder floating-element">
+            <img src="{% static 'img/womanly.jpg' %}" alt="Illustration" />
+          </div>
+        </div>
+      </section>
+      <section id="about" class="section-padding">
+        <div class="container">
+          <h2
+            class="section-title"
+            data-ru="Наши Создательницы"
+            data-en="Our Founders"
+          >
+            Наши Создательницы
+          </h2>
+          <div class="founders-grid">
+            <div class="founder-card scroll-animate">
+              <div class="founder-img">
+                <img src="{% static 'img/photo_2026-01-31_16-08-51.jpg' %}" alt="Лена" />
+              </div>
+              <h3 data-ru="Лена" data-en="Lena">Лена</h3>
+              <p
+                class="role"
+                data-ru="Волонтер & Монтажер"
+                data-en="Volunteer & Editor"
+              >
+                Волонтер & Монтажер
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.2s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/photo_2026-01-11_03-59-58.jpg' %}" alt="Богдана" />
+              </div>
+              <h3 data-ru="Богдана" data-en="Bogdana">Богдана</h3>
+              <p
+                class="role"
+                data-ru="Менеджер Tik-Tok"
+                data-en="Tik-Tok manager"
+              >
+                Менеджер <Tik-Tok></Tik-Tok>
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img
+                  src="{% static 'img/photo_2025-11-07_08-39-24.jpg' %}"
+                  alt="Назбийке"
+                />
+              </div>
+              <h3 data-ru="Назбийке" data-en="Nazbike">Назбийке</h3>
+              <p class="role" data-ru="Владелец" data-en="Owner">Владелец</p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/photo_2026-01-11_08-36-20.jpg' %}" alt="Сезим" />
+              </div>
+              <h3 data-ru="Сезим" data-en="Sezim">Сезим</h3>
+              <p class="role">Frontend dev</p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/photo_2026-01-11_11-11-23.jpg' %}" alt="Мила" />
+              </div>
+              <h3 data-ru="Мила" data-en="Mila">Мила</h3>
+              <p
+                class="role"
+                data-ru="Менеджер Telegram"
+                data-en="Telegram manager"
+              >
+                Менеджер Telegram
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Рояна.jpg' %}" alt="Рояна" />
+              </div>
+              <h3 data-ru="Рояна" data-en="Royana">Рояна</h3>
+              <p
+                class="role"
+                data-ru="Менеджер Instagram"
+                data-en="Instagram manager"
+              >
+                Менеджер Instagram
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Алина.jpg' %}" alt="Алина" />
+              </div>
+              <h3 data-ru="Алина" data-en="Alina">Алина</h3>
+              <p
+                class="role"
+                data-ru="Менеджер Instagram"
+                data-en="Instagram manager"
+              >
+                Менеджер Instagram
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Оразгүл.jpg' %}" alt="Оразгүл" />
+              </div>
+              <h3 data-ru="Оразгүл" data-en="Orazgul">Оразгүл</h3>
+              <p
+                class="role"
+                data-ru="Креативный директор"
+                data-en="Creative Director"
+              >
+                Креативный директор
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Малика.jpg' %}" alt="Малика" />
+              </div>
+              <h3 data-ru="Малика" data-en="Malika">Малика</h3>
+              <p class="role" data-ru="Редактор" data-en="Editor">Редактор</p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Назик.jpg' %}" alt="Назик" />
+              </div>
+              <h3 data-ru="Назик" data-en="Nazik">Назик</h3>
+              <p
+                class="role"
+                data-ru="Backend developer"
+                data-en="Backend developer"
+              >
+                Backend developer
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Полина.jpg' %}" alt="Полина" />
+              </div>
+              <h3 data-ru="Полина" data-en="Polina">Полина</h3>
+              <p class="role" data-ru="Админ" data-en="Admin">Админ</p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Аксения.jpg' %}" alt="Аксения" />
+              </div>
+              <h3 data-ru="Аксения" data-en="Akseniya">Аксения</h3>
+              <p class="role" data-ru="Веб-разработчик" data-en="Website dev">
+                Веб-разработчик
+              </p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+            <div
+              class="founder-card scroll-animate"
+              style="animation-delay: 0.4s"
+            >
+              <div class="founder-img">
+                <img src="{% static 'img/Александра.jpg' %}" alt="Александра" />
+              </div>
+              <h3 data-ru="Александра" data-en="Alexandra">Александра</h3>
+              <p class="role" data-ru="Редактор" data-en="Editor">Редактор</p>
+              <div class="social-icons"><span>IG</span> <span>TG</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="achievements" class="section-padding bg-light">
+        <div class="container">
+          <div class="section-header-flex">
+            <h2
+              class="section-title"
+              data-ru="Гордость сообщества"
+              data-en="Community Pride"
+            >
+              Гордость сообщества
+            </h2>
+            <a
+              href="#"
+              class="link-arrow"
+              data-ru="Смотреть все победы"
+              data-en="View all victories"
+              >Смотреть все победы →</a
+            >
+          </div>
+          <div class="achievements-grid">
+            <div class="ach-card card-pink card-hover-pop">
+              <div class="card-icon">🎓</div>
+              <h3 data-ru="Поступила в Oxford" data-en="Admitted to Oxford">
+                Поступила в Oxford
+              </h3>
+              <p
+                data-ru="История Марии о том, как поддержка чата помогла не сдаться."
+                data-en="Maria's story of how chat support helped her not give up."
+              >
+                История Марии о том, как поддержка чата помогла не сдаться.
+              </p>
+              <a
+                href="#"
+                class="btn-small btn-white-pink"
+                data-ru="Читать историю"
+                data-en="Read story"
+                >Читать историю</a
+              >
+            </div>
+            <div class="ach-card card-green card-hover-pop">
+              <div class="card-icon">🌱</div>
+              <h3 data-ru="Свой проект в 17 лет" data-en="Own project at 17">
+                Свой проект в 17 лет
+              </h3>
+              <p
+                data-ru="Эко-инициатива в Европе, запущенная нашей участницей."
+                data-en="Eco-initiative in Europe launched by our participant."
+              >
+                Эко-инициатива в Европе, запущенная нашей участницей.
+              </p>
+              <a
+                href="#"
+                class="btn-small btn-white-green"
+                data-ru="Подробнее"
+                data-en="More details"
+                >Подробнее</a
+              >
+            </div>
+            <div class="ach-card card-blue card-wide card-hover-pop">
+              <div class="card-icon">💻</div>
+              <h3 data-ru="Нашла работу в IT!" data-en="Found job in IT!">
+                Нашла работу в IT!
+              </h3>
+              <p>
+                Вернулась в профессию после перерыва благодаря нашим курсам.
+              </p>
+              <a
+                href="#"
+                class="btn-small btn-white-blue"
+                data-ru="Читать кейс"
+                data-en="Read case"
+                >Читать кейс</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="support" class="section-padding">
+        <div class="container support-container">
+          <div class="support-text">
+            <h2
+              class="section-title"
+              data-ru="Анонимная поддержка"
+              data-en="Anonymous Support"
+            >
+              Анонимная поддержка
+            </h2>
+            <p
+              class="description-dark"
+              data-ru="Напиши нам. Твое сообщение попадет в закрытую систему, и наш куратор ответит тебе лично. Это безопасно."
+              data-en="Write to us. Your message will go into a closed system, and our curator will respond to you personally. It's safe."
+            >
+              Напиши нам. Твое сообщение попадет в закрытую систему, и наш
+              куратор ответит тебе лично. Это безопасно.
+            </p>
+            <div class="chat-bubble-container pop-in-delayed">
+              <div class="chat-avatar">
+                <img src="../img/Полина.jpg" alt="Куратор" />
+              </div>
+              <div class="chat-bubble">
+                <span
+                  class="chat-name"
+                  data-ru="Полина (Куратор)"
+                  data-en="Polina (Curator)"
+                  >Полина (Куратор)</span
+                >
+                <p
+                  data-ru="Привет! Мы рядом. Расскажи, что тебя беспокоит?"
+                  data-en="Hi! We're here. Tell us what's bothering you?"
+                >
+                  Привет! Мы рядом. Расскажи, что тебя беспокоит?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="support-form-card card-hover-lift">
+            <form>
+              <textarea
+                class="beautiful-textarea"
+                data-ru="Твои мысли... (анонимно)"
+                data-en="Your thoughts... (anonymously)"
+                placeholder="Твои мысли... (анонимно)"
+              ></textarea>
+              <p
+                class="form-note"
+                data-ru="Нажимая кнопку, ты соглашаешься с правилами безопасного пространства."
+                data-en="By clicking the button, you agree to the safe space rules."
+              >
+                * Нажимая кнопку, ты соглашаешься с правилами безопасного
+                пространства.
+              </p>
+              <button
+                type="button"
+                class="btn btn-primary btn-full-width"
+                data-ru="Отправить поддержку"
+                data-en="Send support"
+              >
+                Отправить поддержку
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section id="articles" class="section-padding bg-light-pink">
+        <div class="container">
+          <div class="section-header-flex">
+            <h2
+              class="section-title"
+              data-ru="Статьи и Возможности"
+              data-en="Articles and Opportunities"
+            >
+              Статьи и Возможности
+            </h2>
+            <button
+              class="btn btn-outline-pink"
+              data-ru="Опубликовать свою историю"
+              data-en="Publish your story"
+            >
+              + Опубликовать свою историю
+            </button>
+          </div>
+          <div class="articles-grid">
+            <article class="article-card card-hover-lift">
+              <div class="article-tag tag-blue" data-ru="Гайд" data-en="Guide">
+                Гайд
+              </div>
+              <h3
+                class="article-title"
+                data-ru="Гайд по поступлению в 2026"
+                data-en="Guide to admission in 2026"
+              >
+                Гайд по поступлению в 2026
+              </h3>
+              <p
+                class="article-desc"
+                data-ru="Пошаговый план: документы, визы, лайфхаки от студенток."
+                data-en="Step-by-step plan: documents, visas, life hacks from students."
+              >
+                Пошаговый план: документы, визы, лайфхаки от студенток.
+              </p>
+              <a
+                href="#"
+                class="link-arrow"
+                data-ru="Читать гайд →"
+                data-en="Read guide →"
+                >Читать гайд →</a
+              >
+            </article>
+            <article class="article-card card-hover-lift">
+              <div
+                class="article-tag tag-pink"
+                data-ru="Психология"
+                data-en="Psychology"
+              >
+                Психология
+              </div>
+              <h3
+                class="article-title"
+                data-ru="Как побороть синдром самозванца"
+                data-en="How to overcome the impostor syndrome"
+              >
+                Как побороть синдром самозванца
+              </h3>
+              <p
+                class="article-desc"
+                data-ru="Личный опыт и советы психолога сообщества."
+                data-en="Personal experience and advice from a community psychologist."
+              >
+                Личный опыт и советы психолога сообщества.
+              </p>
+              <a
+                href="#"
+                class="link-arrow"
+                data-ru="Читать статью →"
+                data-en="Read article →"
+                >Читать статью →</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">WoManly</div>
+            <p
+              class="footer-desc"
+              data-ru="С любовью от девушек для девушек 2026."
+              data-en="With love from girls for girls 2026."
+            >
+              С любовью от девушек для девушек 2026.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/wo_man1y?igsh=eXFnc2dndmJzMzhp">Instagram</a>
+            <a href="https://www.tiktok.com/@womanly430?_r=1&_t=ZS-93X6pieMg9h">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      let currentLang = "ru";
+
+      const langSwitch = document.getElementById("langSwitch");
+
+      langSwitch.addEventListener("click", () => {
+        currentLang = currentLang === "ru" ? "en" : "ru";
+        updateLanguage();
+        langSwitch.dataset.lang = currentLang;
+      });
+
+      function updateLanguage() {
+        const elements = document.querySelectorAll("[data-ru][data-en]");
+        elements.forEach((element) => {
+          if (currentLang === "en") {
+            element.textContent = element.dataset.en;
+          } else {
+            element.textContent = element.dataset.ru;
+          }
+        });
+
+        document.documentElement.lang = currentLang;
+
+        if (currentLang === "en") {
+          langSwitch.textContent = "RU | EN";
+        } else {
+          langSwitch.textContent = "EN | RU";
+        }
+      }
+    </script>
+  </body>
+</html>
