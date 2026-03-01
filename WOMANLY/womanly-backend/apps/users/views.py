@@ -1,3 +1,5 @@
+
+
 from django.shortcuts import render
 
 from django.shortcuts import redirect
@@ -12,10 +14,15 @@ def register_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request,'Аккаунт создан успешно!')
             return redirect('index')
     else:
         form = CustomUserCreationForm()
-    return render(request,'register.html',{'form':form})
+    return render(request,'login.html',{
+        'register_form':form,
+        'login_form': AuthenticationForm(request),
+        'show_register':True,
+    })
 
 
 def login_view(request):
@@ -33,7 +40,10 @@ def login_view(request):
                 messages.error(request,'Invalid username or password')
     else:
         form = AuthenticationForm(request)
-    return render(request,'login.html',{'form':form})
+    return render(request,'login.html',{
+    'login_form':form,
+    'register_form':CustomUserCreationForm(),
+    'show_register':False})
 
 
 def logout_view(request):
