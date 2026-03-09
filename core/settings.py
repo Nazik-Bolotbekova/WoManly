@@ -53,7 +53,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR.parent / 'womanly-frontend' / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,9 +138,8 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 
 STATICFILES_DIRS = [
-    BASE_DIR.parent / 'womanly-frontend',
+    BASE_DIR / 'static'
 ]
-
 STATIC_URL = '/static/'
 
 

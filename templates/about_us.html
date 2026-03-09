@@ -1,0 +1,190 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WoManly — О проекте</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/about_us.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-box">
+        <a href="index.html" class="logo">WoManly</a>
+        <div class="nav-right">
+          <div class="lang-toggle">
+            <span onclick="setLang('ru')" id="btn-ru" class="active">RU</span>
+            <span onclick="setLang('en')" id="btn-en">EN</span>
+          </div>
+          <a href="index.html" class="btn-home" data-key="nav_home"
+            >На главную</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <div class="hero-info">
+          <h1 data-key="hero_title">
+            Безопасное комьюнити <span>WoManly</span>
+          </h1>
+          <p data-key="hero_desc">
+            Идея нашего проекта заключается в том, чтобы создать комфортное
+            пространство для девушек от девушек, где освещаются и публично
+            оглашаются проблемы 21 века.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="global">
+      <div class="container">
+        <div class="global-box">
+          <div class="global-text">
+            <h2 data-key="global_title">Проект без границ</h2>
+            <p data-key="global_desc">
+              WoManly растет на более чем 5 разных стран, делая его доступным на
+              разных языках и в любой точке мира.
+            </p>
+          </div>
+          <div class="global-stats">
+            <div class="stat">
+              <span class="num">5+</span>
+              <p data-key="stat_countries">стран</p>
+            </div>
+            <div class="stat">
+              <span class="num">4+</span>
+              <p data-key="stat_langs">языка</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="perks">
+      <div class="container">
+        <h2 class="title" data-key="perks_title">
+          Возможности и то, что мы даем
+        </h2>
+        <div class="grid">
+          <div class="card pink">
+            <div class="icon">✍️</div>
+            <h3 data-key="card1_t">Твой голос</h3>
+            <p data-key="card1_d">
+              Возможность опубликовать на наш сайт свою статью на абсолютно
+              любую тему.
+            </p>
+          </div>
+          <div class="card green">
+            <div class="icon">👯‍♀️</div>
+            <h3 data-key="card2_t">Сообщники</h3>
+            <p data-key="card2_d">
+              Находи людей с похожими интересами и строй крепкие связи в
+              сообществе.
+            </p>
+          </div>
+          <div class="card blue">
+            <div class="icon">💖</div>
+            <h3 data-key="card3_t">Поддержка 24/7</h3>
+            <p data-key="card3_d">
+              Анонимная горячая линия: общение, советы и консультации, которые
+              останутся между нами.
+            </p>
+          </div>
+          <div class="card dark">
+            <div class="icon">🎓</div>
+            <h3 data-key="card4_t">Обучение</h3>
+            <p data-key="card4_d">
+              Возможности в Европе, программы обучения и просвещение в
+              актуальных темах.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <p class="f-logo">WoManly</p>
+          <p class="f-text" data-key="footer_text">
+            От девушек — для девушек. 2026.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const langData = {
+        ru: {
+          nav_home: "На главную",
+          hero_title: "Безопасное комьюнити <span>WoManly</span>",
+          hero_desc:
+            "Идея нашего проекта заключается в том, чтобы создать комфортное пространство для девушек от девушек, где освещаются и публично оглашаются проблемы 21 века.",
+          global_title: "Проект без границ",
+          global_desc:
+            "WoManly растет на более чем 5 разных стран, делая его доступным на разных языках и в любой точке мира.",
+          stat_countries: "стран",
+          stat_langs: "языка",
+          perks_title: "Возможности и то, что мы даем",
+          card1_t: "Твой голос",
+          card1_d:
+            "Возможность опубликовать на наш сайт свою статью на абсолютно любую тему.",
+          card2_t: "Сообщники",
+          card2_d:
+            "Находи людей с похожими интересами и строй крепкие связи в сообществе.",
+          card3_t: "Поддержка 24/7",
+          card3_d:
+            "Анонимная горячая линия: общение, советы и консультации, которые останутся между нами.",
+          card4_t: "Обучение",
+          card4_d:
+            "Возможности в Европе, программы обучения и просвещение в актуальных темах.",
+          footer_text: "От девушек — для девушек. 2026.",
+        },
+        en: {
+          nav_home: "Back Home",
+          hero_title: "Safe Community <span>WoManly</span>",
+          hero_desc:
+            "The idea of our project is to create a comfortable space for girls, by girls, where 21st-century problems are highlighted and addressed publicly.",
+          global_title: "Global Project",
+          global_desc:
+            "WoManly is expanding to more than 5 different countries, making it accessible in different languages anywhere in the world.",
+          stat_countries: "countries",
+          stat_langs: "languages",
+          perks_title: "Opportunities and What We Offer",
+          card1_t: "Your Voice",
+          card1_d:
+            "The opportunity to publish your own article on our website on absolutely any topic.",
+          card2_t: "Soulmates",
+          card2_d:
+            "Find people with similar interests and build strong connections within the community.",
+          card3_t: "24/7 Support",
+          card3_d:
+            "Anonymous hotline: support, advice, and consultations that stay strictly between us.",
+          card4_t: "Education",
+          card4_d:
+            "Opportunities in Europe, educational programs, and awareness of current 21st-century topics.",
+          footer_text: "By girls — for girls. 2026.",
+        },
+      };
+
+      function setLang(lang) {
+        document.querySelectorAll("[data-key]").forEach((el) => {
+          const key = el.getAttribute("data-key");
+          el.innerHTML = langData[lang][key];
+        });
+        document
+          .getElementById("btn-ru")
+          .classList.toggle("active", lang === "ru");
+        document
+          .getElementById("btn-en")
+          .classList.toggle("active", lang === "en");
+      }
+    </script>
+  </body>
+</html>

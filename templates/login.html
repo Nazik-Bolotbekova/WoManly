@@ -1,0 +1,175 @@
+
+{% load static %}
+{% load socialaccount %}
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WoManly | Вход и Регистрация</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+</head>
+<body>
+
+  <div class="language-bar">
+    <button onclick="switchLang('en')">EN</button>
+    <span>|</span>
+    <button onclick="switchLang('ru')">RU</button>
+  </div>
+
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <div class="auth-toggle">
+        <button id="login-tab" class="{% if not show_register %}active{% endif %}" onclick="toggleAuth('login')">
+          Вход
+        </button>
+        <button id="register-tab" class="{% if show_register %}active{% endif %}" onclick="toggleAuth('register')">
+          Регистрация
+        </button>
+      </div>
+
+      {# ===== ФОРМА ВХОДА ===== #}
+      <div id="login-section" {% if show_register %}style="display:none"{% endif %}>
+        <h2>С возвращением!</h2>
+        <p>Рады видеть тебя снова в нашем сообществе.</p>
+
+        <form method="POST" action="{% url 'login' %}" novalidate>
+          {% csrf_token %}
+
+          <div class="input-group">
+            <input
+              type="email"
+              name="username"
+              placeholder="Email"
+              value="{{ login_form.username.value|default:'' }}"
+              class="{% if login_form.username.errors %}input-error{% endif %}"
+            />
+            {% if login_form.username.errors %}
+              <span class="error-msg">{{ login_form.username.errors.0 }}</span>
+            {% endif %}
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Пароль"
+              class="{% if login_form.non_field_errors %}input-error{% endif %}"
+            />
+          </div>
+
+          {% if login_form.non_field_errors %}
+            <div class="error-msg">{{ login_form.non_field_errors.0 }}</div>
+          {% endif %}
+
+          <button type="submit" class="submit-btn">Войти</button>
+        </form>
+      </div>
+
+      {# ===== ФОРМА РЕГИСТРАЦИИ ===== #}
+      <div id="register-section" {% if not show_register %}style="display:none"{% endif %}>
+        <h2>Присоединяйся!</h2>
+        <p>Стань частью международного круга поддержки.</p>
+
+        <form method="POST" action="{% url 'register' %}" novalidate>
+          {% csrf_token %}
+
+          <div class="input-group">
+            <input
+              type="text"
+              name="username"
+              placeholder="Твое имя"
+              value="{{ register_form.username.value|default:'' }}"
+              class="{% if register_form.username.errors %}input-error{% endif %}"
+            />
+            {% if register_form.first_name.errors %}
+              <span class="error-msg">{{ register_form.first_name.errors.0 }}</span>
+            {% endif %}
+          </div>
+
+          <div class="input-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value="{{ register_form.email.value|default:'' }}"
+              class="{% if register_form.email.errors %}input-error{% endif %}"
+            />
+            {% if register_form.email.errors %}
+              <span class="error-msg">{{ register_form.email.errors.0 }}</span>
+            {% endif %}
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              name="password1"
+              placeholder="Пароль"
+              class="{% if register_form.password1.errors %}input-error{% endif %}"
+            />
+            {% if register_form.password1.errors %}
+              <span class="error-msg">{{ register_form.password1.errors.0 }}</span>
+            {% endif %}
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              name="password2"
+              placeholder="Повтори пароль"
+              class="{% if register_form.password2.errors %}input-error{% endif %}"
+            />
+            {% if register_form.password2.errors %}
+              <span class="error-msg">{{ register_form.password2.errors.0 }}</span>
+            {% endif %}
+          </div>
+
+          <button type="submit" class="submit-btn">Создать аккаунт</button>
+        </form>
+      </div>
+
+      {# ===== GOOGLE ===== #}
+      <div class="social-login">
+        <div class="social-divider">Или войти через</div>
+        <a href="{% provider_login_url 'google' %}" class="btn-google">
+          <img src="https://img.icons8.com/color/16/google-logo.png" alt="Google"/>
+          <span>Войти через Google</span>
+        </a>
+      </div>
+
+      <a href="{% url 'index' %}" class="back-link">← На главную</a>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleAuth(type) {
+      const loginSection = document.getElementById('login-section');
+      const registerSection = document.getElementById('register-section');
+      const loginTab = document.getElementById('login-tab');
+      const registerTab = document.getElementById('register-tab');
+
+      if (type === 'register') {
+        loginSection.style.display = 'none';
+        registerSection.style.display = 'block';
+        loginTab.classList.remove('active');
+        registerTab.classList.add('active');
+      } else {
+        loginSection.style.display = 'block';
+        registerSection.style.display = 'none';
+        loginTab.classList.add('active');
+        registerTab.classList.remove('active');
+      }
+    }
+
+    // Если после сабмита регистрации есть ошибки — остаёмся на вкладке регистрации
+  {% if show_register %}
+    document.addEventListener('DOMContentLoaded', function() {
+      toggleAuth('register');
+    });
+  {% endif %}
+  </script>
+</body>
+</html>
